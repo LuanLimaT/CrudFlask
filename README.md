@@ -13,7 +13,9 @@ Detalhar país: Exibe informações detalhadas de um país específico.
 Atualizar país: Permite editar as informações de um país.
 
 Deletar país: Remove um país do banco de dados.
-![Captura de tela 2024-11-30 093840](https://github.com/user-attachments/assets/896f1ec0-7626-4786-afd3-93390f3772c6)
+![Captura de tela 2024-11-30 094534](https://github.com/user-attachments/assets/1dd5af2d-7ac2-4df4-9f01-d0ac46cb06c3)
+
+
 
 
 ## Cidades
