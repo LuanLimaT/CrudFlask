@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhar Rio</title>
+</head>
+<body>
+    <h2>Detalhes do Rio: {{ rio.nome }}</h2>
+
+    <p><strong>Nome:</strong> {{ rio.nome }}</p>
+    <p><strong>País:</strong> {{ rio.pais }}</p>
+    <p><strong>Nascente:</strong> {{ rio.nascente }}</p>
+    <p><strong>Comprimento:</strong> {{ rio.comprimento }} km</p>
+
+    <a href="{{ url_for('listar_rios') }}">Voltar para a lista de rios</a>
+</body>
+</html>

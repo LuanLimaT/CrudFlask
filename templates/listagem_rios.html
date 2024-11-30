@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Rios</title>
+    <!-- Link para o Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEJt3W2tQeqzB2CkR7G9tq0F5j5lc5WkTQb5r5D7zDdceK0pX5W9nX5fF0/6V" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 40px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-title {
+            font-weight: bold;
+        }
+        .card-text {
+            margin-bottom: 20px;
+        }
+        .card-footer {
+            text-align: right;
+        }
+        .btn-custom {
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #218838;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+        .list-link {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .list-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center my-4">Lista de Rios</h2>
+
+        <!-- Exibição da lista de rios -->
+        <div class="row">
+            {% for rio in rios %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            {{ rio.nome }}
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ rio.pais }}</h5>
+                            <p class="card-text">
+                                <strong>Nascente:</strong> {{ rio.nascente }}<br>
+                                <strong>Comprimento:</strong> {{ rio.comprimento }} Km
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/detalhar_rio/{{ rio._id }}" class="btn btn-info">Detalhar</a>
+                            <a href="/atualizar_rio/{{ rio._id }}" class="btn btn-warning">Editar</a>
+                            <form action="/deletar_rio/{{ rio._id }}" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-danger">Deletar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center my-4">
+            <a href="/" class="btn btn-primary">Voltar para o Início</a>
+        </div>
+    </div>
+
+    <!-- Script Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-EVpck82WyfP4yEn9MGvj5C6l1OseSwWqzBlaXYl1yb1lH7wny+5XGqN0jW4UjAUR" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-pzjw8f+ua7Kw1TIq0oyf+HhbRZTULR92hxuF/fpOseT6t7U5vw9eLnBXhXx8yVZZ" crossorigin="anonymous"></script>
+
+</body>
+</html>

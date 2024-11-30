@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Cidade</title>
+</head>
+<body>
+    <h2>Atualizar Cidade</h2>
+    <form action="/atualizar_cidade/{{ cidade._id }}" method="POST">
+        <label for="cidade_nome">Nome</label>
+        <input type="text" name="cidade_nome" value="{{ cidade.nome }}" required>
+
+        <label for="cidade_pais">País</label>
+        <input type="text" name="cidade_pais" value="{{ cidade.pais }}" required>
+
+        <label for="cidade_populacao">População</label>
+        <input type="text" name="cidade_populacao" value="{{ cidade.populacao }}" required>
+
+        <label for="cidade_capital">Capital</label>
+        <input type="text" name="cidade_capital" value="{{ 'Sim' if cidade.capital else 'Não' }}" required>
+
+        <button type="submit">Atualizar</button>
+    </form>
+</body>
+</html>

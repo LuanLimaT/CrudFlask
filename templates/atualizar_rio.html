@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Rio</title>
+</head>
+<body>
+    <h2>Atualizar Rio</h2>
+    <form action="/atualizar_rio/{{ rio._id }}" method="POST">
+        <label for="rio_nome">Nome</label>
+        <input type="text" name="rio_nome" value="{{ rio.nome }}" required>
+
+        <label for="rio_nascente">Nascente</label>
+        <input type="text" name="rio_nascente" value="{{ rio.nascente }}" required>
+
+        <label for="rio_pais">País</label>
+        <input type="text" name="rio_pais" value="{{ rio.pais }}" required>
+
+        <label for="rio_comprimento">Comprimento</label>
+        <input type="text" name="rio_comprimento" value="{{ rio_comprimento }}" required>
+
+        <button type="submit">Atualizar</button>
+    </form>
+</body>
+</html>

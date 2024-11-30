@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar País</title>
+</head>
+<body>
+    <h2>Atualizar País</h2>
+    <form action="/atualizar_pais/{{ pais._id }}" method="POST">
+        <label for="pais_nome">Nome</label>
+        <input type="text" name="pais_nome" value="{{ pais.nome }}" required>
+
+        <label for="pais_continente">Continente</label>
+        <input type="text" name="pais_continente" value="{{ pais.continente }}" required>
+
+        <label for="pais_populacao">População</label>
+        <input type="text" name="pais_populacao" value="{{ pais.populacao }}" required>
+
+        <label for="pais_pib">PIB</label>
+        <input type="number" name="pais_pib" value="{{ pais.pib }}" required>
+
+        <label for="pais_expec">Expectativa</label>
+        <input type="number" name="pais_expec" value="{{ pais.expectativa }}" required>
+
+        <button type="submit">Atualizar</button>
+    </form>
+</body>
+</html>

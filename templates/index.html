@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Coleções</title>
+    <!-- Link para o Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEJt3W2tQeqzB2CkR7G9tq0F5j5lc5WkTQb5r5D7zDdceK0pX5W9nX5fF0/6V" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-section {
+            margin-top: 40px;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .form-title {
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        .alert {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-custom {
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #218838;
+        }
+
+        .container {
+            margin-top: 40px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        button[type="submit"] {
+            height: 40px;
+        }
+
+        .row > .col-md-6 {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-center my-4">Gerenciar Coleções</h1>
+
+        <div class="row">
+            <!-- Formulário Adicionar País -->
+            <div class="col-md-4">
+                <div class="form-container">
+                    <h2 class="form-title">Adicionar País</h2>
+                    <form action="/adicionar_pais" method="POST">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="pais_nome" class="form-label">Nome</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="pais_nome" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="pais_continente" class="form-label">Continente</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="pais_continente" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="pais_populacao" class="form-label">População</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="pais_populacao" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="pais_pib" class="form-label">PIB</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" name="pais_pib" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="pais_expec" class="form-label">Expectativa de Vida</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" name="pais_expec" class="form-control" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-custom w-100">Adicionar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Formulário Adicionar Cidade -->
+            <div class="col-md-4">
+                <div class="form-container">
+                    <h2 class="form-title">Adicionar Cidade</h2>
+                    <form action="/adicionar_cidade" method="POST">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="cidade_nome" class="form-label">Nome</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="cidade_nome" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="cidade_pais" class="form-label">País</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="cidade_pais" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="cidade_populacao" class="form-label">População (em Milhões)</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="cidade_populacao" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="cidade_capital" class="form-label">Capital</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="cidade_capital" class="form-control" placeholder="Sim ou Não" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-custom w-100">Adicionar Cidade</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Formulário Adicionar Rio -->
+            <div class="col-md-4">
+                <div class="form-container">
+                    <h2 class="form-title">Adicionar Rio</h2>
+                    <form action="/adicionar_rio" method="POST">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="rio_nome" class="form-label">Nome</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="rio_nome" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="rio_nascente" class="form-label">Nascente</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="rio_nascente" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="rio_pais" class="form-label">País</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="rio_pais" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="rio_comprimento" class="form-label">Comprimento (em Km)</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" name="rio_comprimento" class="form-control" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-custom w-100">Adicionar Rio</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-EVpck82WyfP4yEn9MGvj5C6l1OseSwWqzBlaXYl1yb1lH7wny+5XGqN0jW4UjAUR" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-pzjw8f+ua7Kw1TIq0oyf+HhbRZTULR92hxuF/fpOseT6t7U5vw9eLnBXhXx8yVZZ" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

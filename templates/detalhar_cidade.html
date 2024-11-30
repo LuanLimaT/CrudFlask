@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhar Cidade</title>
+</head>
+<body>
+    <h2>Detalhes da Cidade: {{ cidade.nome }}</h2>
+
+    <p><strong>Nome:</strong> {{ cidade.nome }}</p>
+    <p><strong>País:</strong> {{ cidade.pais }}</p>
+    <p><strong>População:</strong> {{ cidade.populacao }}</p>
+    <p><strong>É Capital:</strong> {{ 'Sim' if cidade.capital else 'Não' }}</p>
+
+    <a href="{{ url_for('listar_cidades') }}">Voltar para a lista de cidades</a>
+</body>
+</html>
